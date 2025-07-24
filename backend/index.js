@@ -17,7 +17,7 @@ app.get('/ping', (req, res) => {
 
 app.use(bodyParser.json());
 const allowedOrigins = [
-  'https://mern-expense-frontend-vzzm.onrender.com', // Your actual frontend URL
+  'https://mern-expense-frontend-vzzm.onrender.com', 
 ];
 
 app.use(cors({
