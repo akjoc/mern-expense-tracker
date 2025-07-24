@@ -16,7 +16,15 @@ app.get('/ping', (req, res) => {
 });
 
 app.use(bodyParser.json());
-app.use(cors());
+const allowedOrigins = [
+  'https://mern-expense-frontend-vzzm.onrender.com', // Your actual frontend URL
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
+
 app.use('/auth', AuthRouter);
 app.use('/products', ProductRouter);
 app.use('/expenses', ensureAuthenticated, ExpenseRouter)
